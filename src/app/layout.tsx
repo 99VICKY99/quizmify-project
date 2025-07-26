@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import SessionWrapper from "@/components/SessionWrapper";
+import Provider from "@/components/Provider";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -21,8 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased min-h-screen pt-16")}>
         <SessionWrapper>
-          <Navbar />
+          <Provider>
+            <Navbar />
           {children}
+          </Provider>
         </SessionWrapper>
       </body>
     </html>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import SignInButton from './SignInButton'
 import UserAccountNav from './UserAccountNav'
+import { ThemeToggle } from './ThemeToggle'
 
 type Props = {}
 
@@ -19,12 +20,16 @@ const Navbar = (props: Props) => {
                     </p>
                 </Link>
                 <div className='flex items-center'>
+                    <ThemeToggle className='mr-4'/>
+                    <div className='flex items-center'>
                     {session?.user ? (
                         <UserAccountNav user={session.user} />
                     ) : (
                         <SignInButton text="Sign In " />
                     )}
                 </div>
+                </div>
+                
             </div>
         </div>
     );
