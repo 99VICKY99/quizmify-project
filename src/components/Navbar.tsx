@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 import SignInButton from './SignInButton'
+import UserAccountNav from './UserAccountNav'
 
 type Props = {}
 
@@ -19,7 +20,7 @@ const Navbar = (props: Props) => {
                 </Link>
                 <div className='flex items-center'>
                     {session?.user ? (
-                        <h1>welcome({session.user.name})</h1>
+                        <UserAccountNav user={session.user} />
                     ) : (
                         <SignInButton text="Sign In " />
                     )}
