@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,12 +23,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased min-h-screen pt-16")}>
         <SessionWrapper>
-          <Provider>
+          <Provider>               
             <Navbar />
-          {children}
+            {children}
           </Provider>
         </SessionWrapper>
       </body>
     </html>
   );
 }
+        
+       
