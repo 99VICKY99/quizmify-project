@@ -10,11 +10,10 @@ const Provider = ({
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true} {...props}>
       <SessionProvider>
-      {children}
-    </SessionProvider>
-
+        {children}
+      </SessionProvider>
     </ThemeProvider>
     
   )
