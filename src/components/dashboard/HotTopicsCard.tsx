@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import {
   Card,
@@ -6,9 +7,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import CustomWordCloud from "../CustomWordCloud";
-
-
+// import CustomWordCloud from "../CustomWordCloud";
+//
+import dynamic from "next/dynamic";
+const CustomWordCloud = dynamic(() => import('@/components/CustomWordCloud'), { ssr: false });
+//
 type Props = {};
 
 const HotTopicsCard =  (props: Props) => {
